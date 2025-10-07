@@ -1,0 +1,3 @@
+1. Finish baseline custom scripting (scripts to autorun code and record output)
+2. Customize docker iso of Ubuntu with our scripting mods
+3. get a file server up and running to store test builds on

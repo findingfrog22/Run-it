@@ -1,0 +1,51 @@
+//Commands: (in order from top to bottom) NOTE: updated version uses stripped back version of lubuntu with LIVE ISO only
+cd ..
+cd ..
+//first, we want to purge all the useless apps
+sudo apt purge -y libreoffice-core libreoffice-common ure uno-libs-private libuno-purpenvhelpergcc3-3 libuno-cppu3 libuno-sal3 libreoffice-style-breeze libreoffice-style-colibre 
+sudo apt purge -y vlc vlc-data vlc-l10n vlc-bin vlc-plugin-samba vlc-plugin-svg vlc-plugin-notify libvlccore9 
+sudo apt purge -y qpdfview qpdfview-pdf-poppler-plugin quassel quassel-data transmission-qt transmission-common imagemagick-6.q16 imagemagick-6-common imagemagick imagemagick-common lximage-qt lximage-qt-l10n vim vim-common vim-runtime 
+sudo apt purge -y 2048-qt qps screengrab skanlite noblenote picom compton 
+//Now, make it live boot only
+sudo apt remove ubiquity
+//now back to our regular customizations
+sudo crontab -e
+//enter password
+//type in: @reboot/home/AUTOSTART/startup.bin
+//ctrl x
+//enter
+cd home
+mkdir AUTOSTART
+cd AUTOSTART
+touch startup.bin
+nano startup.bin
+//Type in: #!/bin/sh
+//Type in: find /home/AUTORUN/CODE -maxdepth 1 -type f -exec cmd option {} \; > /home/AUTO/>
+//ctrl x
+//enter
+mkdir CODE
+//NOTE: in between here, you can add the code you want to autorun, mainly for test builds, i will put these in comments under here
+//cd CODE
+//touch TestPython.py
+//nano TestPython.py
+//type: print("This is python running...")
+//ctrl x
+//enter
+//touch TestJava.java
+//nano TestJava.java
+//type: System.out.println("This is java running...");
+//ctrl x
+//enter
+//touch TestC.c
+//nano TestC.c
+//type: #include<cstdlib> #include<iostream> int main(){ std::cout << "This is C running..." << std::endl; return 0; }
+//ctrl x
+//enter
+//cd ..
+mkdir OUTPUT
+cd OUTPUT
+touch results.out
+sudo apt install python3-dev
+sudo apt install default-jre
+sudo apt install default-jdk
+sudo apt-get install g++

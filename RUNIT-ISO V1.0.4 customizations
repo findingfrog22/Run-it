@@ -1,4 +1,4 @@
-//Commands: (in order from top to bottom) NOTE: updated version uses stripped back version of lubuntu with LIVE ISO only
+//Commands: (in order from top to bottom) NOTE: as of V1.0.4, we will go back to regular Ubuntu, with custom package removals with LIVE ISO only
 cd ..
 cd ..
 //first, we want to purge all the useless apps
@@ -6,8 +6,11 @@ sudo apt purge -y libreoffice-core libreoffice-common ure uno-libs-private libun
 sudo apt purge -y vlc vlc-data vlc-l10n vlc-bin vlc-plugin-samba vlc-plugin-svg vlc-plugin-notify libvlccore9 
 sudo apt purge -y qpdfview qpdfview-pdf-poppler-plugin quassel quassel-data transmission-qt transmission-common imagemagick-7.q16 imagemagick-7-common imagemagick imagemagick-common lximage-qt lximage-qt-l10n vim vim-common vim-runtime 
 sudo apt purge -y 2048-qt qps screengrab skanlite noblenote picom compton 
+//Ubuntu specific iso reduction, we are stripping down the unused packages
+sudo apt purge snapd
+sudo apt autoremove
 //Now, make it live boot only
-//sudo apt remove ubiquity//optional for lubuntu
+sudo apt remove ubiquity
 //now back to our regular customizations
 sudo crontab -e
 //enter password
@@ -45,6 +48,7 @@ mkdir CODE
 mkdir OUTPUT
 cd OUTPUT
 touch results.out
+//install these code pre-requisites just in case
 sudo apt install python3-dev
 sudo apt install default-jre
 sudo apt install default-jdk

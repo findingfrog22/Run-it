@@ -22,7 +22,7 @@ touch startup.sh
 chmod +x /home/AUTOSTART/startup.sh
 nano startup.sh
 //Type in: #!/bin/sh
-//Type in: find /home/AUTORUN/CODE -maxdepth 1 -type f -exec cmd option {} \; > /home/AUTORUN/OUTPUT/results.out
+//Type in: find /home/AUTOSTART/CODE -maxdepth 1 -type f -exec cmd option {} \; > /home/AUTOSTART/OUTPUT/results.out
 //ctrl x
 //enter
 mkdir CODE

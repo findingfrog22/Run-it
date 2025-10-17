@@ -1,0 +1,5 @@
+It seems that I need file permissions to read, write, and execute files, do this using sudo chmod permissions on the results.out file, and the files we want to execute. 
+For the files we want to execute, we should just make the entire directory executable permissions, find a way to do that
+Results.out should get read/write permissions
+
+We also want to fix the find command in the startup.sh script. The cmd is apparently the name or directory and I think we can remove that. Please research more into it

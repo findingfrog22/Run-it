@@ -54,3 +54,4 @@ sudo apt install python3-dev
 sudo apt install default-jre
 sudo apt install default-jdk
 sudo apt-get install g++
+#NOTE: As of RUNIT V1.0.8, we remove the maybe-ubiquity setting from the grub.cfg and loopback.cfg. We also removed the bottom code from the ubuntu.seed

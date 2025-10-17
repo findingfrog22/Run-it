@@ -8,6 +8,7 @@ apt purge snapd
 apt autoremove
 //Now, make it live boot only
 apt remove ubiquity
+apt autoremove --purge ubiquity ubiquity-casper ubiquity-frontend-gtk ubiquity-slideshow-ubuntu ubiquity-ubuntu-artwork
 //now back to our regular customizations
 sudo crontab -e
 1

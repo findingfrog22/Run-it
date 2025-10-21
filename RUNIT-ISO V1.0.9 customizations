@@ -20,13 +20,16 @@ cd home
 mkdir AUTOSTART
 cd AUTOSTART
 touch startup.sh
-chmod +x /home/AUTOSTART/startup.sh
+chmod a+x /home/AUTOSTART/startup.sh
 nano startup.sh
 //Type in: #!/bin/sh
 //Type in: find /home/AUTOSTART/CODE -maxdepth 1 -type f -exec cmd option {} \; > /home/AUTOSTART/OUTPUT/results.out
 //ctrl x
 //enter
 mkdir CODE
+cd CODE
+chmod -R a+rwx /home/AUTOSTART/CODE
+cd ..
 //NOTE: in between here, you can add the code you want to autorun, mainly for test builds, i will put these in comments under here
 //cd CODE
 //touch TestPython.py
@@ -48,6 +51,7 @@ mkdir CODE
 mkdir OUTPUT
 cd OUTPUT
 touch results.out
+chmod a+rw /home/AUTOSTART/OUTPUT/results.out
 //install these code pre-requisites just in case
 sudo apt update
 sudo apt install python3-dev

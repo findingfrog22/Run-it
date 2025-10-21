@@ -1,0 +1,11 @@
+config:
+    cloud-init.user-data: |
+        #cloud-config
+        timezone: America/New_York
+        users:
+            - default
+            - name: RUNIT
+            - lock_passwd: true
+            - sudo: ALL=(ALL) NOPASSWD:ALL
+        keyboard:
+            layout: us

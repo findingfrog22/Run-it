@@ -1,4 +1,7 @@
-FROM python:3.9-slim-buster
-WORKDIR /usr/app/src
-COPY . .
-CMD ["python", "main.py"]
+FROM python:3.9
+# WORKDIR /usr/app/src
+ADD main.py .
+
+RUN pip install tqdm psutil
+
+CMD ["python", "./main.py"]

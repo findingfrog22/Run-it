@@ -1,7 +1,7 @@
 FROM python:3.9-slim-buster
 
-WORKDIR /src
+WORKDIR /app/src
 
-COPY . /src
+COPY . /app/src
 
 CMD ["python", "main.py"]

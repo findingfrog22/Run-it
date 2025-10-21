@@ -9,3 +9,6 @@ config:
             - sudo: ALL=(ALL) NOPASSWD:ALL
         keyboard:
             layout: us
+
+
+NOTE: you must also have a meta-data.YAML file in the same directory as this file. They must both be under the /cdrom/preseed directory in the cubic manager

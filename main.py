@@ -36,10 +36,7 @@ def f():
 if __name__ == '__main__':
     p = Process(target=f)
     p.start()
-
-    # g = 1
-    # for i in range(100_000_000):
-    #     g = g * 2 % 1023874
+    
     print("\nRunning memory-intensive task...")
     big_list = [i for i in range(500_000_000)]
 

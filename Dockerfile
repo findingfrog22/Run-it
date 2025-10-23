@@ -4,4 +4,4 @@ ADD main.py .
 
 RUN pip install tqdm psutil
 
-CMD ["python", "./main.py"]
+CMD ["python", "-u", "./main.py"]

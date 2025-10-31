@@ -27,28 +27,31 @@ def f(container_id, res_dict):
 
         # Memory usage
         mem_usage = stats["memory_stats"]["usage"]
-        mem_limit = stats["memory_stats"]["limit"]
-        mem_percent = (mem_usage / mem_limit) * 100.0
 
         cpu_readings.append(cpu_percent)
-        mem_readings.append(mem_readings)
+        mem_readings.append(mem_usage)
 
         time.sleep(0.25)
 
     res_dict["avg_cpu"] = sum(cpu_readings) / len(cpu_readings) if cpu_readings else 0
-    res_dict["avg_mem"] = sum(mem_readings) / len(mem_readings) if mem_readings else 0
+    res_dict["avg_mem"] = (sum(mem_readings) / len(mem_readings)) if mem_readings else 0
 
 if __name__ == '__main__':
+    factor = 1000000
     try:
         file = input("Enter the file name you want to run: ").strip()
+        user_mem_limit = input("Enter the memeory limit in MB: ").strip()
 
         container = client.containers.run(
             image="chenjohnnycs/python-script-runner",
             cpu_count=2,
-            mem_limit="12mb", # Memory Limit is 6 megabytes
-            detach=True
+            mem_limit="{}mb".format(user_mem_limit), # Memory Lower Limit is 6 megabytes
+            detach=True,
         )
         print("Container {} started.".format(container.short_id))
+
+        stats = container.stats(stream = False)
+        mem_limit = (stats["memory_stats"]["limit"])
 
         with Manager() as manager:
             res_dict = manager.dict()
@@ -59,15 +62,18 @@ if __name__ == '__main__':
 
             ## Running specific test file
             print("Running test file {}:".format(file))
+
+            print("==== Program Output ====")
             for chunk in container.exec_run("python -u test_files/{}".format(file), stream=True).output:
                 print(chunk.decode())
-
+            print("==== Program End ====")
+            
             res_dict["running"] = False
             p.join()
 
             print("==== Average Running Stats ====")
-            print("Average CPU stats --> {}".format(res_dict["avg_cpu"]))
-            print("Average MEM stats --> {}".format(res_dict["avg_mem"]))
+            print("Average CPU stats --> {:.3f}%".format(res_dict["avg_cpu"]))
+            print("Average MEM stats --> {:.3f} MB / {:.3f} MB ({:.3f}%)".format(res_dict["avg_mem"]/factor, mem_limit/factor, (res_dict["avg_mem"]/mem_limit)*100))
 
         container.stop()
         container.remove()

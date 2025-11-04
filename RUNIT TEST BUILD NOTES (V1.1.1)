@@ -5,3 +5,6 @@ What works:
 
 Current Issues:
 - C++ and Java need compilation before running the files, needs more complex script, their own script with potentially their own folders and outputs.
+
+potential fixes:
+- search this up online, "how to autorun java and c++ files in linux with the find command"

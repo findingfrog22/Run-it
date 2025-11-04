@@ -1,0 +1,7 @@
+The startup setup is still there, need to find a way to link the autoinstall for cloud-init properly
+
+What works:
+- Python autorun files work
+
+Current Issues:
+- C++ and Java need compilation before running the files, needs more complex script, their own script with potentially their own folders and outputs.

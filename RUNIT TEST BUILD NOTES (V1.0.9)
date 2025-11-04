@@ -1,4 +1,0 @@
-Just need to fix the default permissions now
-The startup setup is still there, need to find a way to link the autoinstall for cloud-init properly
-
-We also want to fix the find command in the startup.sh script. The cmd is apparently the name or directory and I think we can remove that. Please research more into it

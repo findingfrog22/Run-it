@@ -23,7 +23,10 @@ touch startup.sh
 chmod a+x /home/AUTOSTART/startup.sh
 nano startup.sh
 //Type in: #!/bin/sh
-//Type in: find /home/AUTOSTART/CODE -maxdepth 1 -type f -exec {} \; > /home/AUTOSTART/OUTPUT/results.out
+//Type in (DONT TYPE): find /home/AUTOSTART/CODE -maxdepth 1 -type f -exec {} \; > /home/AUTOSTART/OUTPUT/results.out
+//Type in: find /home/AUTOSTART/CODE -maxdepth 1 -type f -name '*.py'  -exec python3 {} \; > /home/AUTOSTART/OUTPUT/results.out
+//Type in: find /home/AUTOSTART/CODE -maxdepth 1 -type f -name '*.cpp' -exec bash -c 'filename="${1%.*}" g++ "$1" -o "$filename" && "./$filename"' {} \; > /home/AUTOSTART/OUTPUT/results.out 2>&1
+//Type in: find /home/AUTOSTART/CODE -maxdepth 1 -type f -name '*.java' -exec bash -c 'filename="${1%.*}" javac "$1" && java -cp "$(dirname "$1")" "$(basename "$filename")"' {} \; > /home/AUTOSTART/OUT> 2>&1 
 //ctrl x
 //enter
 mkdir CODE
@@ -34,7 +37,6 @@ cd ..
 //cd CODE
 //touch TestPython.py
 //nano TestPython.py
-//type: #!/usr/bin/env python3
 //type: print("This is python running...")
 //ctrl x
 //enter

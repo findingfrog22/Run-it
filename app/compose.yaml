@@ -87,6 +87,11 @@ services:
     labels:
       traefik.http.routers.backend.rule: Host(`localhost`) && PathPrefix(`/api`)
       traefik.http.services.backend.loadbalancer.server.port: 3000
+    ports:
+      - "3000:3000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./uploads:/var/opt/tmp
 
   ###################################################
   # Service: client
@@ -182,4 +187,3 @@ services:
 ###################################################
 volumes:
   todo-mysql-data:
-  myapp:

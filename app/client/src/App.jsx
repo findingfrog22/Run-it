@@ -6,8 +6,7 @@ import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
-import { TodoListCard } from './components/TodoListCard';
-import { Greeting } from './components/Greeting';
+import { Header } from './components/Header';
 
 function App() {
     const [newFile, setNewFile] = useState('')
@@ -28,10 +27,29 @@ function App() {
     }
 
     return (
+        // <>
+        //     <Header />
+        //     <Container className="text-center" style={{ height: "91vh" }}>
+        //         <Row className="h-100">
+        //             <Col>
+        //             </Col>
+
+        //             <Col xs={6} className="d-flex flex-column align-items-center" id="home-center-content">
+        //                 <h1 className="text-light home-title">Run-It</h1>
+        //                 <p className="text-light-emphasis home-subtext">For all your testing needs. Run all of your programs with a specified amount of CPU power and RAM and benchmark them easily.</p>
+        //                 <Button variant="primary" className="home-main-cta-button" href="#5">Start Benchmarking</Button>
+        //             </Col>
+
+        //             <Col>
+        //             </Col>
+        //         </Row>
+        //     </Container>
+        // </>
+
         <Container>
             <Row>
                 <Col md={{ offset: 3, span: 6 }}>
-                    <Greeting />
+                    {/* <Greeting /> */}
                     {/* <TodoListCard /> */}
                     <Form onSubmit={uploadFile}>
                         <Form.Group controlId="formFile" className="mb-3">
@@ -43,11 +61,9 @@ function App() {
                             />
                         </Form.Group>
                         <Button variant="primary" type="submit">
-                            Upload
+                            Upload & Run
                         </Button>
                     </Form>
-
-
                 </Col>
             </Row>
         </Container>

@@ -1,7 +1,41 @@
 @import 'bootstrap/scss/bootstrap';
 
 body {
-    background-color: #f4f4f4;
-    margin-top: 50px;
+    background-color: #111111;
     font-family: 'Lato';
+}
+
+.home-title {
+    font-weight: bolder;
+    font-size: 72px;
+}
+
+.home-subtext {
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+.home-main-cta-button {
+    margin-top: 135px;
+    padding: 12px 36px 12px 36px;
+}
+
+#home-center-content {
+    margin-top: 85px;
+}
+
+.nav-link-text {
+    font-size: 20px;
+}
+
+a.nav-link-text {
+    margin: 0 12px 0 12px;
+}
+
+button.nav-link-text {
+    padding: 8px 24px 8px 24px;
+}
+
+.bg-custom-navbar {
+    background-color: #BE5103;
 }

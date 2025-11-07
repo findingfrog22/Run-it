@@ -1,9 +1,11 @@
 The startup setup is still there, need to find a way to link the autoinstall for cloud-init properly
 
 What works:
-- Python autorun files work
+- Python autorun files work, now without the headers too
 
 Current Issues:
+- C++ only half works, it gets to results.out file, but fails to fully compile. the Output file name scheming is empty at '', so we need to fix that
+- Java fails to compile, invalid option upon compilation
 - C++ and Java need compilation before running the files, needs more complex script, their own script with potentially their own folders and outputs.
 
 potential fixes:

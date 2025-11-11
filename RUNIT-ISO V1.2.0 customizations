@@ -25,8 +25,8 @@ nano startup.sh
 //Type in: #!/bin/sh
 //Type in (DONT TYPE): find /home/AUTOSTART/CODE -maxdepth 1 -type f -exec {} \; > /home/AUTOSTART/OUTPUT/results.out
 //Type in: find /home/AUTOSTART/CODE -maxdepth 1 -type f -name '*.py'  -exec python3 {} \; > /home/AUTOSTART/OUTPUT/results.out
-//Type in: find /home/AUTOSTART/CODE -maxdepth 1 -type f -name '*.cpp' -exec bash -c 'filename="${1%.*}" g++ "$1" -o "$filename" && "./$filename"' {} \; > /home/AUTOSTART/OUTPUT/results.out 2>&1
-//Type in: find /home/AUTOSTART/CODE -maxdepth 1 -type f -name '*.java' -exec bash -c 'filename="${1%.*}" javac "$1" && java -cp "$(dirname "$1")" "$(basename "$filename")"' {} \; > /home/AUTOSTART/OUT> 2>&1 
+//Type in: find /home/AUTOSTART/CODE -maxdepth 1 -type f -name '*.cpp' -exec sh -c 'g++ "$1" -o /home/AUTOSTART/COMPILED_CODE/"$(basename "${1%.*}")" && cd /home/AUTOSTART/COMPILED_CODE/ && ./"$(basename "${1%.*}")" && cd ..' _ {} \; > /home/AUTOSTART/OUTPUT/results.out 2>&1
+//Type in: find /home/AUTOSTART/CODE -maxdepth 1 -type f -name '*.java' -exec sh -c 'javac -d /home/AUTOSTART/COMPILED_CODE "$1" && java -cp /home/AUTOSTART/COMPILED_CODE/ "$(basename -s .java "$1")"' _ {} \; > /home/AUTOSTART/OUT> 2>&1 
 //ctrl x
 //enter
 mkdir CODE
@@ -61,4 +61,7 @@ sudo apt install python3-dev
 sudo apt install default-jre
 sudo apt install default-jdk
 sudo apt-get install g++
+cd ..
+mkdir COMPILED_CODE #will be used in future releases for organizational purposes (for compiled languages like C/C++, Java, etc)[is currently used too]
+chmod a+rwx /home/AUTOSTART/COMPILED_CODE/
 #NOTE: As of RUNIT V1.0.8, we remove the maybe-ubiquity setting from the grub.cfg and loopback.cfg. We also removed the bottom code from the ubuntu.seed

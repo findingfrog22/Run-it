@@ -7,6 +7,7 @@ What works:
 Current Issues:
 - The output file results.out gets overwritten every time a file executes
 - No C support yet
+- Big issue: during live boot, task bar doesn't show up (may have to do with something in crontab -e breaking)
 
 potential fixes:
 - none, will look into later

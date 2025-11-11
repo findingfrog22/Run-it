@@ -1,0 +1,16 @@
+The startup setup is still there, need to find a way to link the autoinstall for cloud-init properly
+
+What works:
+- Python autorun files work, now without the headers too
+- C++ and Java now autorun, with auto-compilation too
+
+Current Issues:
+- The output file results.out gets overwritten every time a file executes
+- No C support yet
+
+potential fixes:
+- none, will look into later
+
+Action for V1.2.1:
+- Add C support
+- Fix output file issue where it gets overwritten

@@ -2,16 +2,14 @@ The startup setup is still there, need to find a way to link the autoinstall for
 
 What works:
 - Python autorun files work, now without the headers too
-- C++ and Java now autorun, with auto-compilation too
+- C/C++ and Java now autorun, with auto-compilation too
 
 Current Issues:
 - The output file results.out gets overwritten every time a file executes
-- No C support yet
 - Big issue: during live boot, task bar doesn't show up (may have to do with something in crontab -e breaking)
 
 potential fixes:
 - none, will look into later
 
-Action for V1.2.1:
-- Add C support
+Action for V1.2.2:
 - Fix output file issue where it gets overwritten

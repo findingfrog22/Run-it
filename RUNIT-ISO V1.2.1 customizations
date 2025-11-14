@@ -26,7 +26,8 @@ nano startup.sh
 //Type in (DONT TYPE): find /home/AUTOSTART/CODE -maxdepth 1 -type f -exec {} \; > /home/AUTOSTART/OUTPUT/results.out
 //Type in: find /home/AUTOSTART/CODE -maxdepth 1 -type f -name '*.py'  -exec python3 {} \; > /home/AUTOSTART/OUTPUT/results.out
 //Type in: find /home/AUTOSTART/CODE -maxdepth 1 -type f -name '*.cpp' -exec sh -c 'g++ "$1" -o /home/AUTOSTART/COMPILED_CODE/"$(basename "${1%.*}")" && cd /home/AUTOSTART/COMPILED_CODE/ && ./"$(basename "${1%.*}")" && cd ..' _ {} \; > /home/AUTOSTART/OUTPUT/results.out 2>&1
-//Type in: find /home/AUTOSTART/CODE -maxdepth 1 -type f -name '*.java' -exec sh -c 'javac -d /home/AUTOSTART/COMPILED_CODE "$1" && java -cp /home/AUTOSTART/COMPILED_CODE/ "$(basename -s .java "$1")"' _ {} \; > /home/AUTOSTART/OUT> 2>&1 
+//Type in: find /home/AUTOSTART/CODE -maxdepth 1 -type f -name '*.java' -exec sh -c 'javac -d /home/AUTOSTART/COMPILED_CODE "$1" && java -cp /home/AUTOSTART/COMPILED_CODE/ "$(basename -s .java "$1")"' _ {} \; > /home/AUTOSTART/OUTPUT/results.out 2>&1 
+//Type in: find /home/AUTOSTART/CODE -maxdepth 1 -type f -name '*.c' -exec sh -c 'gcc "$1" -o /home/AUTOSTART/COMPILED_CODE/"$(basename "${1%.*}")" && cd /home/AUTOSTART/COMPILED_CODE/ && ./"$(basename "${1%.*}")" && cd ..' _ {} \; > /home/AUTOSTART/OUTPUT/results.out 2>&1
 //ctrl x
 //enter
 mkdir CODE
@@ -37,17 +38,22 @@ cd ..
 //cd CODE
 //touch TestPython.py
 //nano TestPython.py
-//type: print("This is python running...")
+//type: print("This is Python running...")
 //ctrl x
 //enter
 //touch TestJava.java
 //nano TestJava.java
-//type: System.out.println("This is java running...");
+//type: System.out.println("This is Java running...");
+//ctrl x
+//enter
+//touch TestCPP.cpp
+//nano TestCPP.cpp
+//type: #include<cstdlib> #include<iostream> int main(){ std::cout << "This is C++ running..." << std::endl; return 0; }
 //ctrl x
 //enter
 //touch TestC.c
 //nano TestC.c
-//type: #include<cstdlib> #include<iostream> int main(){ std::cout << "This is C running..." << std::endl; return 0; }
+//type: #include<cstdlib> int main(){ printf('This is C running...'); return 0; }
 //ctrl x
 //enter
 //cd ..
@@ -61,6 +67,7 @@ sudo apt install python3-dev
 sudo apt install default-jre
 sudo apt install default-jdk
 sudo apt-get install g++
+sudo apt-get install gcc
 cd ..
 mkdir COMPILED_CODE #will be used in future releases for organizational purposes (for compiled languages like C/C++, Java, etc)[is currently used too]
 chmod a+rwx /home/AUTOSTART/COMPILED_CODE/

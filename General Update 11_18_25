@@ -1,0 +1,6 @@
+Made a little progress today:
+I am trying to convert a custom RUNIT V1.2.1 Ubuntu iso image to a docker file.
+it seems more complicated than I thought. i would have to do some advanced re-compiling to make it work on docker. i don't have enough understanding of Ubuntu to recompile it from the ground up.
+
+I found that I can import files, and i am working on importing my custom script files into it so my ubuntu docker file can access and run those scripts. it seems like the .tar.gz isn't working as intended.
+I will have to continue this on Friday, 11/21/25

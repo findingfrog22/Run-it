@@ -1,0 +1,65 @@
+@import 'bootstrap/scss/bootstrap';
+
+*, html {
+    scroll-behavior: smooth !important;
+}
+
+body {
+    background-color: #111111;
+    font-family: 'Lato';
+    margin: 0;
+}
+
+#home-container {
+    height: 92vh;
+}
+
+.home-title {
+    font-weight: bolder;
+    font-size: 72px;
+}
+
+.home-subtext {
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+.home-main-cta-button {
+    margin-top: 175px;
+    padding: 12px 36px 12px 36px;
+}
+
+#home-center-content {
+    margin-top: 85px;
+}
+
+#benchmarking-container {
+    background-color: #333333;
+    height: 100vh;
+}
+
+#information-container {
+    background-color: #444444;
+    height: 100vh;
+}
+
+#aboutus-container {
+    background-color: #555555;
+    height: 100vh;
+}
+
+.nav-link-text {
+    font-size: 20px;
+}
+
+a.nav-link-text {
+    margin: 0 12px 0 12px;
+}
+
+button.nav-link-text {
+    padding: 8px 24px 8px 24px;
+}
+
+.bg-custom-navbar {
+    background-color: #BE5103;
+}

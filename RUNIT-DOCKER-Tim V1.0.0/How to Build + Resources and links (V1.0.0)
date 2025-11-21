@@ -1,0 +1,9 @@
+How to build commmand:
+Step 1.) [in command line] cd to your folder with your dockerfile and scripts
+Step 2.) type in: docker build -t yourimagename
+Step 3.) it is now in docker, check the desktop
+
+Links and resources for V1.0.0:
+- https://medium.com/@moein.moeinnia/understanding-docker-mounts-volumes-bind-mounts-and-tmpfs-f992185edc27
+- https://docs.docker.com/reference/dockerfile#cmd
+- search on google "how to write scripts to configure docker images"

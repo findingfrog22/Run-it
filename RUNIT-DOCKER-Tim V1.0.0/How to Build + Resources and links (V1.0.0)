@@ -7,3 +7,6 @@ Links and resources for V1.0.0:
 - https://medium.com/@moein.moeinnia/understanding-docker-mounts-volumes-bind-mounts-and-tmpfs-f992185edc27
 - https://docs.docker.com/reference/dockerfile#cmd
 - search on google "how to write scripts to configure docker images"
+
+Note to Tim:
+- the files folder is on your Desktop, in "RUNIT DOCKER FILES"

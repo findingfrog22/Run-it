@@ -1,0 +1,5 @@
+#!/bin/sh
+find /home/AUTOSTART/CODE -maxdepth 1 -type f -name '*.py' -exec python3 {} \; > /home/AUTOSTART/OUTPUT/results.out
+find /home/AUTOSTART/CODE -maxdepth 1 -type f -name '*.cpp' -exec sh -c 'g++ "$1" -o /home/AUTOSTART/COMPILED_CODE/"$(basename "${1%.*}")" && cd /home/AUTOSTART/COMPILED_CODE/ && ./"$(basename "${1%.*}")" && cd ..' _ {} \; > /home/AUTOSTART/OUTPUT/results.out 2>&1
+find /home/AUTOSTART/CODE -maxdepth 1 -type f -name '*.java' -exec sh -c 'javac -d /home/AUTOSTART/COMPILED_CODE "$1" && java -cp /home/AUTOSTART/COMPILED_CODE/ "$(basename -s .java "$1")"' _ {} \; > /home/AUTOSTART/OUTPUT/results.out 2>&1
+find /home/AUTOSTART/CODE -maxdepth 1 -type f -name '*.c' -exec sh -c 'gcc "$1" -o /home/AUTOSTART/COMPILED_CODE/"$(basename "${1%.*}")" && cd /home/AUTOSTART/COMPILED_CODE/ && ./"$(basename "${1%.*}")" && cd ..' _ {} \; > /home/AUTOSTART/OUTPUT/results.out 2>&1

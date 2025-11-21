@@ -1,0 +1,16 @@
+Current Changes:
+- Added modifications from RUNIT 1.2.1 test builds of ubuntu ISOs to docker image template file and new scripts.
+- Added Dockerfile
+- Added setup.sh
+- Added startup.sh
+
+What works:
+- The internal .sh scripts both work, but they need files to autorun, and a persistant results.out file that we can see after the container closes
+
+What needs work:
+- We need to make the output persistent so we can see it after the container ends
+
+To do next time: (V1.0.1)
+- Add support for a CODE volume for code input
+- Add support for a OUTPUT volume for code output
+- Making sure the scripts internally pull files from CODE and output to OUTPUT

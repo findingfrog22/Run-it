@@ -1,0 +1,8 @@
+FROM ubuntu:latest
+WORKDIR /app
+COPY ./setup.sh /app/setup.sh
+RUN chmod +x /app/setup.sh
+RUN /app/setup.sh
+COPY startup.sh /app/startup.sh
+RUN chmod +x /app/startup.sh
+CMD ["/app/startup.sh"]

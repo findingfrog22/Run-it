@@ -1,0 +1,31 @@
+#installing prerequisites just in case...
+sudo apt update
+sudo apt install python3-dev
+sudo apt install default-jre
+sudo apt install default-jdk
+sudo apt-get install g++
+sudo apt-get install gcc
+
+#making a minimal package, removing all the bloat...
+sudo apt purge -y libreoffice-core libreoffice-common ure uno-libs-private libuno-purpenvhelpergcc3-3 libuno-cppu3 libuno-sal3 libreoffice-style-breeze libreoffice-style-colibre
+apt purge snapd
+apt autoremove
+
+#making all of the directories
+cd ..
+cd ..
+cd home
+mkdir AUTOSTART
+cd AUTOSTART
+cd CODE
+chmod -R a+rwx /home/AUTOSTART/CODE
+cd ..
+#you may put your code to add test code here, optional
+#mainly for test builds tho
+mkdir OUTPUT
+cd OUTPUT
+touch results.out
+chmod a+rw /home/AUTOSTART/OUTPUT/results.out
+cd ..
+mkdir COMPILED_CODE
+chmod a+rwx /home/AUTOSTART/COMPILED_CODE/

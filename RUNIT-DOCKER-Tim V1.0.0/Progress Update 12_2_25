@@ -1,6 +1,7 @@
 Currently working on Runit Docker Edition V1.0.1
 Made multiple attempts into volume management, having issues with mounting location not being recognized properly
 I will continue this after RCOS expo, I hope to finish this before the semester ends, so finishing it next week
+I did update the build command today in documentation
 
 Here are some resources:
 - https://www.reddit.com/r/docker/comments/1cbw3in/is_there_a_simple_way_to_mount_a_docker_volume_to/ (look at user: beatrix_daniels)

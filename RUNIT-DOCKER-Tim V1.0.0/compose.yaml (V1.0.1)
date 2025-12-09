@@ -1,0 +1,16 @@
+services:
+  ubuntu_custom_app:
+    build: . #tells docker compose to use the dockerfile in this same directory
+    #command: tail -f /dev/null #keeps the container running
+    volumes:
+      - CODE:/app/home/AUTOSTART/CODE
+      - OUTPUT:/app/home/AUTOSTART/OUTPUT
+      #- /home/user/my-project-code:/app/code #this creates a bind mount connecting a specific directory from your local computer (/home/user/my-project-code) to the containers inner directory (/app/code)
+
+volumes:
+  CODE:
+    driver: local
+  OUTPUT:
+    driver: local
+
+#note: you build it by typing this in terminal: docker compose up -d

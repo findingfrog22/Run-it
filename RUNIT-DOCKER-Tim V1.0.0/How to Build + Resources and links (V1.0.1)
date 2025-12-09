@@ -8,5 +8,9 @@ Links and resources for V1.0.0:
 - https://docs.docker.com/reference/dockerfile#cmd
 - search on google "how to write scripts to configure docker images"
 
+How to build command for docker compose (Auto volume support):
+Step 1.) cd to your project directory in your laptop
+Step 2.) type in: docker compose up -d
+
 Note to Tim:
 - the files folder is on your Desktop, in "RUNIT DOCKER FILES"

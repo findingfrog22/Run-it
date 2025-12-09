@@ -1,0 +1,17 @@
+Current Changes:
+- Added compose.yaml
+- Modified startup.sh to call to mounted volume locations
+
+What works:
+- The internal .sh scripts both work, but they need files to autorun, and a persistant results.out file that we can see after the container closes
+- The volumes are mounted, and the scripts do mention the locations where they are mounted (but we don't know if it does anything yet)
+
+What needs work:
+- We need to make the output persistent so we can see it after the container ends
+- Need to make the volume access actually work and do something (need to put code files into the CODE virtual volume)
+
+To do next time: (V1.0.2)
+- Fix container scripting to access CODE Volume
+- Add actual code test files into the CODE virtual volume
+- Fix container scripting to access OUTPUT Volume
+- Making sure the scripts internally pull files from CODE and output to OUTPUT
